@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/instagram_menu_home" android:title="" android:icon="@drawable/instagram_home" />
+    <item android:id="@+id/instagram_menu_search" android:title="" android:icon="@drawable/search_icon" />
+    <item android:id="@+id/instagram_menu_add" android:title="" android:icon="@drawable/instagram_add_square" />
+    <item android:id="@+id/instagram_menu_video" android:title="" android:icon="@drawable/instagram_video_play" />
+    <item android:id="@+id/instagram_menu_account" android:title="" android:icon="@drawable/instagram_account_icon" />
+</menu>

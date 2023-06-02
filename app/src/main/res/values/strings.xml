@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Pinterest</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="for_you">For you</string>
+    <string name="ngam">Ngẫm</string>
+    <string name="xinh">Xinh</string>
+    <string name="craft">Craft</string>
+    <string name="lap_trinh">Lập trình</string>
+    <string name="tab5">Tab 5</string>
+    <string name="tab6">Tab 6</string>
+    <string name="tab7">Tab 7</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
