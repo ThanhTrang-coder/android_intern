@@ -9,14 +9,14 @@ import android.os.Bundle;
 
 import com.google.android.material.tabs.TabLayout;
 
-import edu.hanu.app.Facebook.adapters.HomePagerAdapter;
+import edu.hanu.app.Facebook.adapters.FbAdapterViewPager;
 import edu.hanu.app.Facebook.fragments.HomeFragment;
 import edu.hanu.app.Pinterest.fragments.DefaultFragment;
 import edu.hanu.mydesign.R;
 
 public class FacebookActivity extends AppCompatActivity {
     int[] images = {R.drawable.image2, R.drawable.image, R.drawable.image5, R.drawable.image7};
-    HomePagerAdapter homePagerAdapter;
+    FbAdapterViewPager facebookAdapterViewPager;
     ViewPager postList;
     TabLayout tabLayout;
 
@@ -35,19 +35,19 @@ public class FacebookActivity extends AppCompatActivity {
     }
 
     private void setUpPagerAdapter() {
-        homePagerAdapter = new HomePagerAdapter(getSupportFragmentManager());
-        homePagerAdapter.addFragment(new HomeFragment(), "");
-        homePagerAdapter.addFragment(new DefaultFragment(), "");
-        homePagerAdapter.addFragment(new DefaultFragment(), "");
-        homePagerAdapter.addFragment(new DefaultFragment(), "");
-        homePagerAdapter.addFragment(new DefaultFragment(), "");
-        homePagerAdapter.addFragment(new DefaultFragment(), "");
+        facebookAdapterViewPager = new FbAdapterViewPager(getSupportFragmentManager());
+        facebookAdapterViewPager.addFragment(new HomeFragment(), "");
+        facebookAdapterViewPager.addFragment(new DefaultFragment(), "");
+        facebookAdapterViewPager.addFragment(new DefaultFragment(), "");
+        facebookAdapterViewPager.addFragment(new DefaultFragment(), "");
+        facebookAdapterViewPager.addFragment(new DefaultFragment(), "");
+        facebookAdapterViewPager.addFragment(new DefaultFragment(), "");
 
-        postList.setAdapter(homePagerAdapter);
+        postList.setAdapter(facebookAdapterViewPager);
     }
     private void setUpTabLayout() {
         tabLayout.setupWithViewPager(postList);
-        tabLayout.getTabAt(0).setIcon(R.drawable.ic_home);
+        tabLayout.getTabAt(0).setIcon(R.drawable.pinterest_home_icon);
         tabLayout.getTabAt(1).setIcon(R.drawable.ic_watch_video);
         tabLayout.getTabAt(2).setIcon(R.drawable.ic_heart);
         tabLayout.getTabAt(3).setIcon(R.drawable.ic_game);

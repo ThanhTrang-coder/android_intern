@@ -46,11 +46,11 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginLeft="130dp"
                     android:backgroundTint="@color/light_gray"
-                    android:src = "@drawable/ic_add_black"
+                    android:src = "@drawable/ic_add"
                     android:layout_toRightOf="@id/facebook_name"
                     app:backgroundTint="@color/light_gray"
                     app:fabSize="mini"
-                    app:maxImageSize="20dp" />
+                    app:maxImageSize="22dp" />
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/fab_search"
@@ -58,11 +58,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:backgroundTint="@color/light_gray"
-                    android:src = "@drawable/ic_search"
+                    android:src = "@drawable/pinterest_search_icon"
                     android:layout_toRightOf="@id/fab_add"
                     app:backgroundTint="@color/light_gray"
                     app:fabSize="mini"
-                    app:maxImageSize="20dp" />
+                    app:maxImageSize="28dp" />
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/fab_messenger"
@@ -74,7 +74,7 @@
                     android:layout_toRightOf="@id/fab_search"
                     app:backgroundTint="@color/light_gray"
                     app:fabSize="mini"
-                    app:maxImageSize="30dp" />
+                    app:maxImageSize="28dp" />
             </RelativeLayout>
 
 

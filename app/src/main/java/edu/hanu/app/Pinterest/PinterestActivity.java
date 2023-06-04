@@ -7,7 +7,7 @@ import android.os.Bundle;
 
 import com.google.android.material.tabs.TabLayout;
 
-import edu.hanu.app.Pinterest.adapters.MyViewPagerAdapter;
+import edu.hanu.app.Pinterest.adapters.PinterestAdapterViewPager;
 import edu.hanu.app.Pinterest.fragments.CraftFragment;
 import edu.hanu.app.Pinterest.fragments.DefaultFragment;
 import edu.hanu.mydesign.R;
@@ -15,7 +15,7 @@ import edu.hanu.mydesign.R;
 public class PinterestActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
-    private MyViewPagerAdapter adapter;
+    private PinterestAdapterViewPager pinterestAdapterViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,17 +25,17 @@ public class PinterestActivity extends AppCompatActivity {
         tabLayout = findViewById(R.id.tab_layout);
         viewPager = findViewById(R.id.viewPager);
 
-        adapter = new MyViewPagerAdapter(getSupportFragmentManager());
+        pinterestAdapterViewPager = new PinterestAdapterViewPager(getSupportFragmentManager());
 
-        adapter.addFragment(new DefaultFragment(), "For you");
-        adapter.addFragment(new DefaultFragment(), "Ngẫm");
-        adapter.addFragment(new DefaultFragment(), "Xinh");
-        adapter.addFragment(new CraftFragment(), "Craft");
-        adapter.addFragment(new DefaultFragment(), "Lập trình");
-        adapter.addFragment(new DefaultFragment(), "Tips");
-        adapter.addFragment(new DefaultFragment(), "Fun");
+        pinterestAdapterViewPager.addFragment(new DefaultFragment(), "For you");
+        pinterestAdapterViewPager.addFragment(new DefaultFragment(), "Ngẫm");
+        pinterestAdapterViewPager.addFragment(new DefaultFragment(), "Xinh");
+        pinterestAdapterViewPager.addFragment(new CraftFragment(), "Craft");
+        pinterestAdapterViewPager.addFragment(new DefaultFragment(), "Lập trình");
+        pinterestAdapterViewPager.addFragment(new DefaultFragment(), "Tips");
+        pinterestAdapterViewPager.addFragment(new DefaultFragment(), "Fun");
 
-        viewPager.setAdapter(adapter);
+        viewPager.setAdapter(pinterestAdapterViewPager);
         tabLayout.setupWithViewPager(viewPager);
     }
 }

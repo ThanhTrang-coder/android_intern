@@ -19,48 +19,40 @@
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:src="@drawable/instagram_logo"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="14dp"/>
 
         <ImageView
             android:id="@+id/instagram_arrow_icon"
             android:layout_width="10dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/instagram_arrow_down"
+            android:src="@drawable/ins_arrow_down"
             android:layout_marginTop="14dp"
             android:layout_toRightOf="@id/instagram_name"/>
 
         <ImageView
             android:id="@+id/instagram_heart_icon"
-            android:layout_width="40dp"
+            android:layout_width="30dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/instagram_heart_icon"
-            android:layout_marginLeft="150dp"
+            android:src="@drawable/ins_heart_icon"
+            android:layout_marginLeft="190dp"
             android:layout_marginTop="18dp"
             android:layout_toRightOf="@id/instagram_name"/>
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/instagram_messenger_icon"
-            android:layout_marginTop="18dp"
-            android:layout_marginLeft="20dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ins_messenger_icon"
+            android:layout_marginTop="19dp"
+            android:layout_marginLeft="10dp"
             android:layout_toRightOf="@id/instagram_heart_icon" />
     </RelativeLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/instagram_news_feed"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/instagram_header"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/instagram_user_news_list"
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/instagram_view_pager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/instagram_news_feed"
+        app:layout_constraintTop_toBottomOf="@id/instagram_header"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/ins_bottom_nav"/>
@@ -69,9 +61,10 @@
         android:id="@+id/ins_bottom_nav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:menu="@menu/menu_bottom_nav_instagram"
+        app:menu="@menu/menu_bottom_navigation"
+        app:itemIconSize="30dp"
         app:itemIconTint="@color/black"
-        app:layout_constraintTop_toBottomOf="@id/instagram_user_news_list"
+        app:layout_constraintTop_toBottomOf="@id/instagram_view_pager"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>

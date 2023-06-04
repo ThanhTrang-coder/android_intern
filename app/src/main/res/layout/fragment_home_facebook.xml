@@ -56,7 +56,7 @@
             app:layout_constraintTop_toBottomOf="@id/status_container" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/newsfeed_container"
+            android:id="@+id/fb_story_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
@@ -70,11 +70,11 @@
             android:background="@color/gray_200"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/newsfeed_container"
+            app:layout_constraintTop_toBottomOf="@id/fb_story_list"
             />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvHomeFacebook"
+            android:id="@+id/fb_post_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginVertical="10dp"

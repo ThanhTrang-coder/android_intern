@@ -27,7 +27,7 @@ public class CraftAdapter extends RecyclerView.Adapter<CraftAdapter.CraftHolder>
     @NonNull
     @Override
     public CraftHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_pinterest, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.pinterest_item, parent, false);
         return new CraftHolder(view);
     }
 

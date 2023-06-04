@@ -1,82 +1,91 @@
 package edu.hanu.app.Tiktok;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
+import androidx.viewpager2.widget.ViewPager2;
 
-import android.graphics.Color;
-import android.graphics.PorterDuff;
 import android.os.Bundle;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
 
-import edu.hanu.app.Facebook.adapters.HomePagerAdapter;
-import edu.hanu.app.Facebook.fragments.HomeFragment;
+import java.util.ArrayList;
+
+import edu.hanu.app.Facebook.adapters.FbAdapterViewPager;
 import edu.hanu.app.Pinterest.fragments.DefaultFragment;
+import edu.hanu.app.Tiktok.adapters.TikTokAdapterViewPager;
+import edu.hanu.app.Tiktok.fragments.SearchFragment;
 import edu.hanu.mydesign.R;
 
 public class TiktokActivity extends AppCompatActivity {
-    HomePagerAdapter homePagerAdapter;
-    ViewPager postList;
-    TabLayout tabLayout;
+    ViewPager2 tiktok_view_pager;
+    ArrayList<Fragment> fragmentArrayList = new ArrayList<>();
+    BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_collapse);
+        setContentView(R.layout.activity_tiktok);
 
-//        postList = findViewById(R.id.post_list1);
-//        tabLayout = findViewById(R.id.tabLayoutFb);
-//
-//        setUpPagerAdapter();
-//
-//        setUpTabLayout();
+        bottomNavigationView = findViewById(R.id.tiktok_bottom_nav);
+        tiktok_view_pager = findViewById(R.id.tiktok_view_pager);
 
+        setUpViewPagerWithBottomNav();
     }
 
-//    private void setUpPagerAdapter() {
-//        homePagerAdapter = new HomePagerAdapter(getSupportFragmentManager());
-//        homePagerAdapter.addFragment(new HomeFragment(), "");
-//        homePagerAdapter.addFragment(new DefaultFragment(), "");
-//        homePagerAdapter.addFragment(new DefaultFragment(), "");
-//        homePagerAdapter.addFragment(new DefaultFragment(), "");
-//        homePagerAdapter.addFragment(new DefaultFragment(), "");
-//        homePagerAdapter.addFragment(new DefaultFragment(), "");
-//
-//        postList.setAdapter(homePagerAdapter);
-//    }
-//    private void setUpTabLayout() {
-//        tabLayout.setupWithViewPager(postList);
-//        tabLayout.getTabAt(0).setIcon(R.drawable.ic_home);
-//        tabLayout.getTabAt(1).setIcon(R.drawable.ic_watch_video);
-//        tabLayout.getTabAt(2).setIcon(R.drawable.ic_heart);
-//        tabLayout.getTabAt(3).setIcon(R.drawable.ic_game);
-//        tabLayout.getTabAt(4).setIcon(R.drawable.ic_notification);
-//        tabLayout.getTabAt(5).setIcon(R.drawable.menu_hamburger);
-//
-//        tabLayout.getTabAt(0).getIcon().setColorFilter(getResources().getColor(R.color.colorPrimary), PorterDuff.Mode.SRC_IN);
-//        tabLayout.getTabAt(1).getIcon().setColorFilter(Color.LTGRAY, PorterDuff.Mode.SRC_IN);
-//        tabLayout.getTabAt(2).getIcon().setColorFilter(Color.LTGRAY, PorterDuff.Mode.SRC_IN);
-//        tabLayout.getTabAt(3).getIcon().setColorFilter(Color.LTGRAY, PorterDuff.Mode.SRC_IN);
-//        tabLayout.getTabAt(4).getIcon().setColorFilter(Color.LTGRAY, PorterDuff.Mode.SRC_IN);
-//        tabLayout.getTabAt(5).getIcon().setColorFilter(Color.LTGRAY, PorterDuff.Mode.SRC_IN);
-//
-//        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-//            @Override
-//            public void onTabSelected(TabLayout.Tab tab) {
-//                tab.getIcon().setColorFilter(getResources().getColor(R.color.colorPrimary), PorterDuff.Mode.SRC_IN);
-//            }
-//
-//            @Override
-//            public void onTabUnselected(TabLayout.Tab tab) {
-//                tab.getIcon().setColorFilter(Color.LTGRAY, PorterDuff.Mode.SRC_IN);
-//            }
-//
-//            @Override
-//            public void onTabReselected(TabLayout.Tab tab) {
-//
-//            }
-//        });
-//    }
+    private void setUpViewPagerWithBottomNav() {
+        fragmentArrayList.add(new DefaultFragment());
+        fragmentArrayList.add(new SearchFragment());
+        fragmentArrayList.add(new DefaultFragment());
+        fragmentArrayList.add(new DefaultFragment());
+        fragmentArrayList.add(new DefaultFragment());
 
+        TikTokAdapterViewPager tikTokAdapterViewPager = new TikTokAdapterViewPager(this, fragmentArrayList);
+        tiktok_view_pager.setAdapter(tikTokAdapterViewPager);
+        tiktok_view_pager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                switch (position) {
+                    case 0:
+                        bottomNavigationView.setSelectedItemId(R.id.bottom_nav_menu_home);
+                        break;
+                    case 1:
+                        bottomNavigationView.setSelectedItemId(R.id.bottom_nav_menu_search);
+                        break;
+                    case 2:
+                        bottomNavigationView.setSelectedItemId(R.id.bottom_nav_menu_add);
+                        break;
+                    case 3:
+                        bottomNavigationView.setSelectedItemId(R.id.bottom_nav_menu_video);
+                        break;
+                    case 4:
+                        bottomNavigationView.setSelectedItemId(R.id.bottom_nav_menu_account);
+                        break;
+                }
+                super.onPageSelected(position);
+            }
+        });
+
+        bottomNavigationView.setOnItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.bottom_nav_menu_home:
+                    tiktok_view_pager.setCurrentItem(0);
+                case R.id.bottom_nav_menu_search:
+                    tiktok_view_pager.setCurrentItem(1);
+                    break;
+                case R.id.bottom_nav_menu_add:
+                    tiktok_view_pager.setCurrentItem(2);
+                    break;
+                case R.id.bottom_nav_menu_video:
+                    tiktok_view_pager.setCurrentItem(3);
+                    break;
+                case R.id.bottom_nav_menu_account:
+                    tiktok_view_pager.setCurrentItem(4);
+                    break;
+            }
+            return true;
+        });
+    }
 
 }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/menu_home" android:title="" android:icon="@drawable/ic_home" />
-    <item android:id="@+id/menu_search" android:title="" android:icon="@drawable/ic_search" />
-    <item android:id="@+id/menu_add" android:title="" android:icon="@drawable/ic_add_black" />
-    <item android:id="@+id/menu_message" android:title="" android:icon="@drawable/menu_chat" />
-    <item android:id="@+id/menu_avatar" android:title="" android:icon="@drawable/ic_account" />
+    <item android:id="@+id/menu_home" android:title="" android:icon="@drawable/pinterest_home_icon" />
+    <item android:id="@+id/menu_search" android:title="" android:icon="@drawable/pinterest_search_icon" />
+    <item android:id="@+id/menu_add" android:title="" android:icon="@drawable/pinterest_add_icon" />
+    <item android:id="@+id/menu_message" android:title="" android:icon="@drawable/pinterest_chat_icon" />
+    <item android:id="@+id/menu_avatar" android:title="" android:icon="@drawable/pinterest_account_icon" />
 </menu>
