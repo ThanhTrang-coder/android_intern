@@ -59,12 +59,10 @@ public class HomeFragment extends Fragment {
 
     private List<InsPost> getPostList() {
         List<InsPost> list = new ArrayList<>();
-        list.add(new InsPost(R.drawable.image, "User 1", "03/06/2023", R.drawable.image8));
-        list.add(new InsPost(R.drawable.image7, "User 2", "01/06/2023", R.drawable.image4));
-        list.add(new InsPost(R.drawable.image5, "User 3", "29/05/2023", R.drawable.image));
-        list.add(new InsPost(R.drawable.image3, "User 4", "30/05/2023", R.drawable.image1));
-        list.add(new InsPost(R.drawable.image2, "User 5", "31/05/2023", R.drawable.image2));
-        list.add(new InsPost(R.drawable.image8, "User 6", "02/06/2023", R.drawable.image7));
+        list.add(new InsPost(R.drawable.image, R.drawable.image8, "User 1", "03/06/2023", "Đây là nội dung bài post trên instagram.", "gitabigitabi", "Xin giá"));
+        list.add(new InsPost(R.drawable.image7, R.drawable.image4, "User 2", "01/06/2023", "Đây là nội dung bài post trên instagram.", "_tomtom211_", "Mình xin giá ạ"));
+        list.add(new InsPost(R.drawable.image5, R.drawable.image, "User 3", "29/05/2023", "Đây là nội dung bài post trên instagram.", "blalabla", "Xin giá"));
+        list.add(new InsPost(R.drawable.image3, R.drawable.image1, "User 4", "30/05/2023", "Đây là nội dung bài post trên instagram.", "gibugibu", "Xin giá"));
 
         return list;
     }

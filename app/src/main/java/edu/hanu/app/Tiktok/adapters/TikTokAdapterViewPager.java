@@ -2,27 +2,37 @@ package edu.hanu.app.Tiktok.adapters;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
-import androidx.viewpager2.adapter.FragmentStateAdapter;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import java.util.ArrayList;
 
-public class TikTokAdapterViewPager extends FragmentStateAdapter {
+import edu.hanu.app.Pinterest.fragments.DefaultFragment;
+import edu.hanu.app.Instagram.fragments.SearchFragment;
+
+public class TikTokAdapterViewPager extends FragmentStatePagerAdapter {
     ArrayList<Fragment> arrayList;
 
-    public TikTokAdapterViewPager(@NonNull FragmentActivity fragmentActivity, ArrayList<Fragment> arrayList) {
-        super(fragmentActivity);
-        this.arrayList = arrayList;
+    public TikTokAdapterViewPager(@NonNull FragmentManager fm, int behavior) {
+        super(fm, behavior);
     }
+
 
     @NonNull
     @Override
-    public Fragment createFragment(int position) {
-        return arrayList.get(position);
+    public Fragment getItem(int position) {
+        switch (position) {
+            case 0: return new DefaultFragment();
+            case 1: return new DefaultFragment();
+            case 2: return new DefaultFragment();
+            case 3: return new DefaultFragment();
+            case 4: return new DefaultFragment();
+            default: return new DefaultFragment();
+        }
     }
 
     @Override
-    public int getItemCount() {
-        return arrayList.size();
+    public int getCount() {
+        return 5;
     }
 }

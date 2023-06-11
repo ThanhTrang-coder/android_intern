@@ -70,7 +70,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:backgroundTint="@color/light_gray"
-                    android:src = "@drawable/ic_messenger"
+                    android:src = "@drawable/fb_ic_messenger"
                     android:layout_toRightOf="@id/fab_search"
                     app:backgroundTint="@color/light_gray"
                     app:fabSize="mini"

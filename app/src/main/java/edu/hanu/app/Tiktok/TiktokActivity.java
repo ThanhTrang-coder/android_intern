@@ -1,26 +1,20 @@
 package edu.hanu.app.Tiktok;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
-import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.tabs.TabLayout;
 
-import java.util.ArrayList;
-
-import edu.hanu.app.Facebook.adapters.FbAdapterViewPager;
-import edu.hanu.app.Pinterest.fragments.DefaultFragment;
 import edu.hanu.app.Tiktok.adapters.TikTokAdapterViewPager;
-import edu.hanu.app.Tiktok.fragments.SearchFragment;
 import edu.hanu.mydesign.R;
 
 public class TiktokActivity extends AppCompatActivity {
-    ViewPager2 tiktok_view_pager;
-    ArrayList<Fragment> fragmentArrayList = new ArrayList<>();
+    ViewPager tiktok_view_pager;
     BottomNavigationView bottomNavigationView;
 
     @Override
@@ -35,57 +29,65 @@ public class TiktokActivity extends AppCompatActivity {
     }
 
     private void setUpViewPagerWithBottomNav() {
-        fragmentArrayList.add(new DefaultFragment());
-        fragmentArrayList.add(new SearchFragment());
-        fragmentArrayList.add(new DefaultFragment());
-        fragmentArrayList.add(new DefaultFragment());
-        fragmentArrayList.add(new DefaultFragment());
 
-        TikTokAdapterViewPager tikTokAdapterViewPager = new TikTokAdapterViewPager(this, fragmentArrayList);
+        TikTokAdapterViewPager tikTokAdapterViewPager = new TikTokAdapterViewPager(getSupportFragmentManager(), FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         tiktok_view_pager.setAdapter(tikTokAdapterViewPager);
-        tiktok_view_pager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+
+        tiktok_view_pager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
             @Override
             public void onPageSelected(int position) {
                 switch (position) {
                     case 0:
-                        bottomNavigationView.setSelectedItemId(R.id.bottom_nav_menu_home);
+                        bottomNavigationView.getMenu().findItem(R.id.bottom_nav_menu_home).setChecked(true);
                         break;
                     case 1:
-                        bottomNavigationView.setSelectedItemId(R.id.bottom_nav_menu_search);
+                        bottomNavigationView.getMenu().findItem(R.id.bottom_nav_menu_search).setChecked(true);
                         break;
                     case 2:
-                        bottomNavigationView.setSelectedItemId(R.id.bottom_nav_menu_add);
+                        bottomNavigationView.getMenu().findItem(R.id.bottom_nav_menu_add).setChecked(true);
                         break;
                     case 3:
-                        bottomNavigationView.setSelectedItemId(R.id.bottom_nav_menu_video);
+                        bottomNavigationView.getMenu().findItem(R.id.bottom_nav_menu_video).setChecked(true);
                         break;
                     case 4:
-                        bottomNavigationView.setSelectedItemId(R.id.bottom_nav_menu_account);
+                        bottomNavigationView.getMenu().findItem(R.id.bottom_nav_menu_account).setChecked(true);
                         break;
                 }
-                super.onPageSelected(position);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
             }
         });
 
-        bottomNavigationView.setOnItemSelectedListener(item -> {
-            switch (item.getItemId()) {
-                case R.id.bottom_nav_menu_home:
-                    tiktok_view_pager.setCurrentItem(0);
-                case R.id.bottom_nav_menu_search:
-                    tiktok_view_pager.setCurrentItem(1);
-                    break;
-                case R.id.bottom_nav_menu_add:
-                    tiktok_view_pager.setCurrentItem(2);
-                    break;
-                case R.id.bottom_nav_menu_video:
-                    tiktok_view_pager.setCurrentItem(3);
-                    break;
-                case R.id.bottom_nav_menu_account:
-                    tiktok_view_pager.setCurrentItem(4);
-                    break;
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.bottom_nav_menu_home:
+                        tiktok_view_pager.setCurrentItem(0);
+                        break;
+                    case R.id.bottom_nav_menu_search:
+                        tiktok_view_pager.setCurrentItem(1);
+                        break;
+                    case R.id.bottom_nav_menu_add:
+                        tiktok_view_pager.setCurrentItem(2);
+                        break;
+                    case R.id.bottom_nav_menu_video:
+                        tiktok_view_pager.setCurrentItem(3);
+                        break;
+                    case R.id.bottom_nav_menu_account:
+                        tiktok_view_pager.setCurrentItem(4);
+                        break;
+                }
+                return false;
             }
-            return true;
         });
     }
-
 }

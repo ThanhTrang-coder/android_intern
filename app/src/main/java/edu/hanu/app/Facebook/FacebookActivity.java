@@ -48,11 +48,11 @@ public class FacebookActivity extends AppCompatActivity {
     private void setUpTabLayout() {
         tabLayout.setupWithViewPager(postList);
         tabLayout.getTabAt(0).setIcon(R.drawable.pinterest_home_icon);
-        tabLayout.getTabAt(1).setIcon(R.drawable.ic_watch_video);
-        tabLayout.getTabAt(2).setIcon(R.drawable.ic_heart);
-        tabLayout.getTabAt(3).setIcon(R.drawable.ic_game);
-        tabLayout.getTabAt(4).setIcon(R.drawable.ic_notification);
-        tabLayout.getTabAt(5).setIcon(R.drawable.menu_hamburger);
+        tabLayout.getTabAt(1).setIcon(R.drawable.fb_ic_watch_video);
+        tabLayout.getTabAt(2).setIcon(R.drawable.fb_ic_heart);
+        tabLayout.getTabAt(3).setIcon(R.drawable.fb_ic_game);
+        tabLayout.getTabAt(4).setIcon(R.drawable.fb_ic_notification);
+        tabLayout.getTabAt(5).setIcon(R.drawable.fb_menu_hamburger);
 
         tabLayout.getTabAt(0).getIcon().setColorFilter(getResources().getColor(R.color.colorPrimary), PorterDuff.Mode.SRC_IN);
         tabLayout.getTabAt(1).getIcon().setColorFilter(Color.LTGRAY, PorterDuff.Mode.SRC_IN);

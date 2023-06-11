@@ -21,8 +21,4 @@ public class DefaultFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_default, container, false);
     }
 
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-    }
 }

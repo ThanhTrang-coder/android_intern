@@ -36,6 +36,9 @@ public class InsPostAdapter extends RecyclerView.Adapter<InsPostAdapter.DefaultP
         holder.ins_user_name_post.setText(insPost.getInsUserName());
         holder.ins_post_desc.setText(insPost.getInsUserDesc());
         holder.ins_post_image.setImageResource(insPost.getInsImage());
+        holder.content_post.setText(insPost.getContent_post());
+        holder.commenter_name.setText(insPost.getCommenter_name());
+        holder.comment.setText(insPost.getComment());
     }
 
     @Override
@@ -45,7 +48,7 @@ public class InsPostAdapter extends RecyclerView.Adapter<InsPostAdapter.DefaultP
     }
 
     public class DefaultPostHolder extends RecyclerView.ViewHolder {
-        private TextView ins_user_name_post, ins_post_desc;
+        private TextView ins_user_name_post, ins_post_desc, content_post, commenter_name, comment, like_number;
         private ImageView ins_post_image;
         private CircleImageView ins_user_avatar_post;
 
@@ -55,7 +58,10 @@ public class InsPostAdapter extends RecyclerView.Adapter<InsPostAdapter.DefaultP
             ins_user_avatar_post = itemView.findViewById(R.id.ins_user_avatar_post);
             ins_user_name_post = itemView.findViewById(R.id.ins_user_name_post);
             ins_post_image = itemView.findViewById(R.id.ins_post_image);
-            ins_post_desc = itemView.findViewById(R.id.ins_post_desc);
+            ins_post_desc = itemView.findViewById(R.id.ins_post_music);
+            content_post = itemView.findViewById(R.id.content_post);
+            commenter_name = itemView.findViewById(R.id.commenter_name);
+            comment = itemView.findViewById(R.id.comment);
         }
     }
 }

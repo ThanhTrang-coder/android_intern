@@ -19,6 +19,7 @@ import edu.hanu.app.Facebook.adapters.FbStoryAdapter;
 import edu.hanu.app.Facebook.adapters.FbPostAdapter;
 import edu.hanu.app.Facebook.models.FbStory;
 import edu.hanu.app.Facebook.models.FbPost;
+import edu.hanu.app.Facebook.models.Photo;
 import edu.hanu.mydesign.R;
 public class HomeFragment extends Fragment {
 
@@ -34,7 +35,7 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         RecyclerView fb_post_list = view.findViewById(R.id.fb_post_list);
-        FbPostAdapter postAdapter = new FbPostAdapter(getPostList());
+        FbPostAdapter postAdapter = new FbPostAdapter(getContext(), getPostList());
 
         LinearLayoutManager manager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
         fb_post_list.setLayoutManager(manager);
@@ -50,17 +51,21 @@ public class HomeFragment extends Fragment {
 
     private List<FbPost> getPostList() {
         List<FbPost> list = new ArrayList<>();
-        list.add(new FbPost("Đậu hũ thối", R.drawable.dau_hu_thoi, R.drawable.image2, "1/6 dành cho các 'em bé', tuổi thực tế hay tuổi tâm hồn đều xứng đáng có quàaa"));
-        list.add(new FbPost("SUB Factory", R.drawable.sub_factory, R.drawable.sub_factory_post, "slow progress is not a failure, it's better than nothing."));
-        list.add(new FbPost("Lang Thang Hà Nội", R.drawable.langthanghn_avatar, R.drawable.lang_thang_hn_post, "HÔM NAY LÀ NGÀY ĐẸP ĐỂ TỎ TÌNH ❤️\n" +
-                "\n" +
-                "CHẮC CHẮN THÀNH CÔNG ❤️❤️❤️\n" +
-                "\n" +
-                "ĐƯỢC THÌ ĐƯỢC “EM BÉ”\n" +
-                "NG.Ã THÌ ĐƯỢC “EM BÉ” BỜ LỐC \uD83E\uDD23"));
-        list.add(new FbPost("Halo Hà Nội", R.drawable.halo_avatar, R.drawable.halo_post, "Toàn nói sự thật không đó \uD83E\uDEE3"));
-        list.add(new FbPost("SUB Factory", R.drawable.sub_factory, R.drawable.sub_factory_post1, "guilty or jummy"));
-        list.add(new FbPost("Chuyện của Hà Nội", R.drawable.chuyen_cua_hn_avatar, R.drawable.chuyen_cua_hn_post, "Cháu phát âm hợp lý quá, tôi không cãi được \uD83D\uDE02"));
+
+        List<Photo> photos = new ArrayList<>();
+        photos.add(new Photo(R.drawable.image7));
+        photos.add(new Photo(R.drawable.image6));
+        photos.add(new Photo(R.drawable.image3));
+        photos.add(new Photo(R.drawable.image8));
+
+        String videoUrl = "https://www.youtube.com/watch?v=wjcukywhO50&t=318s";
+
+        list.add(new FbPost(FbPostAdapter.TYPE_IMAGE, "Đậu hũ thối", R.drawable.dau_hu_thoi, R.drawable.image2, "1/6 dành cho các 'em bé', tuổi thực tế hay tuổi tâm hồn đều xứng đáng có quàaa"));
+        list.add(new FbPost(FbPostAdapter.TYPE_MULTI_IMAGE, "Lang Thang Hà Nội", R.drawable.langthanghn_avatar, photos, "multiple photo"));
+        list.add(new FbPost(FbPostAdapter.TYPE_VIDEO, "SUB Factory", R.drawable.sub_factory, videoUrl, "Video!!!"));
+        list.add(new FbPost(FbPostAdapter.TYPE_IMAGE, "Halo Hà Nội", R.drawable.halo_avatar, R.drawable.halo_post, "Toàn nói sự thật không đó \uD83E\uDEE3"));
+        list.add(new FbPost(FbPostAdapter.TYPE_IMAGE, "SUB Factory", R.drawable.sub_factory, R.drawable.sub_factory_post, "slow progress is not a failure, it's better than nothing."));
+        list.add(new FbPost(FbPostAdapter.TYPE_IMAGE, "Chuyện của Hà Nội", R.drawable.chuyen_cua_hn_avatar, R.drawable.chuyen_cua_hn_post, "Cháu phát âm hợp lý quá, tôi không cãi được \uD83D\uDE02"));
 
         return list;
     }

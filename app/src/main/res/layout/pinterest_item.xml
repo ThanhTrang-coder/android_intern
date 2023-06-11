@@ -76,7 +76,7 @@
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
-            android:src="@drawable/ic_more_horiz_pinterest"
+            android:src="@drawable/pinterest_ic_more_horiz"
             app:layout_constraintTop_toTopOf="@id/textView"
             app:layout_constraintEnd_toEndOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import edu.hanu.app.Facebook.FacebookActivity;
 import edu.hanu.app.Instagram.InstagramActivity;
 import edu.hanu.app.Pinterest.PinterestActivity;
+import edu.hanu.app.test.TestActivity;
 import edu.hanu.mydesign.R;
 import edu.hanu.app.Tiktok.TiktokActivity;
 

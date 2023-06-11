@@ -3,16 +3,17 @@ package edu.hanu.app.Instagram.models;
 import android.content.pm.PackageManager;
 
 public class InsPost {
-    private int insAvatar;
-    private String insUserName;
-    private String insUserDesc;
-    private int insImage;
+    private int insAvatar, insImage;
+    private String insUserName, insUserDesc, content_post, commenter_name, comment;
 
-    public InsPost(int insAvatar, String insUserName, String insUserDesc, int insImage) {
+    public InsPost(int insAvatar, int insImage, String insUserName, String insUserDesc, String content_post, String commenter_name, String comment) {
         this.insAvatar = insAvatar;
+        this.insImage = insImage;
         this.insUserName = insUserName;
         this.insUserDesc = insUserDesc;
-        this.insImage = insImage;
+        this.content_post = content_post;
+        this.commenter_name = commenter_name;
+        this.comment = comment;
     }
 
     public int getInsAvatar() {
@@ -48,5 +49,29 @@ public class InsPost {
 
     public void setInsImage(int insImage) {
         this.insImage = insImage;
+    }
+
+    public String getContent_post() {
+        return content_post;
+    }
+
+    public void setContent_post(String content_post) {
+        this.content_post = content_post;
+    }
+
+    public String getCommenter_name() {
+        return commenter_name;
+    }
+
+    public void setCommenter_name(String commenter_name) {
+        this.commenter_name = commenter_name;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 }

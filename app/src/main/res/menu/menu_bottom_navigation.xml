@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/bottom_nav_menu_home" android:title="" android:icon="@drawable/tiktok_home_ic" />
-    <item android:id="@+id/bottom_nav_menu_search" android:title="" android:icon="@drawable/pinterest_search_icon" />
-    <item android:id="@+id/bottom_nav_menu_add" android:title="" android:icon="@drawable/instagram_add_square" />
-    <item android:id="@+id/bottom_nav_menu_video" android:title="" android:icon="@drawable/menu_video_reel" />
-    <item android:id="@+id/bottom_nav_menu_account" android:title="" android:icon="@drawable/ins_account_icon" />
-</menu>

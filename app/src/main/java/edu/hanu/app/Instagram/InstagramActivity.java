@@ -1,20 +1,18 @@
 package edu.hanu.app.Instagram;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
-import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
 
 import java.util.ArrayList;
 
 import edu.hanu.app.Instagram.adapters.InsAdapterViewPager;
 import edu.hanu.app.Instagram.fragments.HomeFragment;
+import edu.hanu.app.Instagram.fragments.SearchFragment;
 import edu.hanu.app.Pinterest.fragments.DefaultFragment;
 import edu.hanu.mydesign.R;
 
@@ -37,7 +35,7 @@ public class InstagramActivity extends AppCompatActivity {
 
     private void setUpViewPagerWithBottomNav() {
         fragmentArrayList.add(new HomeFragment());
-        fragmentArrayList.add(new DefaultFragment());
+        fragmentArrayList.add(new SearchFragment());
         fragmentArrayList.add(new DefaultFragment());
         fragmentArrayList.add(new DefaultFragment());
         fragmentArrayList.add(new DefaultFragment());
@@ -85,7 +83,6 @@ public class InstagramActivity extends AppCompatActivity {
                 case R.id.bottom_nav_menu_account:
                     instagram_view_pager.setCurrentItem(4);
                     break;
-
             }
             return true;
         });

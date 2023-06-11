@@ -61,7 +61,7 @@
                 android:id="@+id/post_status"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:src="@drawable/ic_resource_public"
+                android:src="@drawable/fb_post_ic_resource_public"
                 android:layout_marginTop="8dp"
                 android:layout_marginLeft="10dp"
                 app:layout_constraintTop_toBottomOf="@id/user_name_of_post"
@@ -74,7 +74,7 @@
             android:layout_height="20dp"
             android:layout_marginRight="2dp"
             android:layout_marginLeft="5dp"
-            android:src="@drawable/ic_remove"
+            android:src="@drawable/fb_post_ic_remove"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
@@ -83,7 +83,7 @@
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginRight="15dp"
-            android:src="@drawable/ic_more_horiz_facebook"
+            android:src="@drawable/fb_ic_more_horiz"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toStartOf="@id/ic_remove"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -113,7 +113,7 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
+        android:layout_marginTop="5dp"
         android:layout_marginHorizontal="5dp"
         app:cardCornerRadius="30dp"
         app:layout_constraintTop_toBottomOf="@id/divider_top"
@@ -140,7 +140,7 @@
         app:layout_constraintBottom_toTopOf="@id/reaction_container">
 
         <ImageView
-            android:id="@+id/display_icon"
+            android:id="@+id/like_ic"
             android:layout_width="15dp"
             android:layout_height="15dp"
             android:src="@drawable/like"
@@ -150,20 +150,31 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
+        <ImageView
+            android:id="@+id/love_ic"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/love"
+            android:layout_marginLeft="2dp"
+            android:layout_marginVertical="10dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/like_ic"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:text="15"
+            android:text="15 k"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toEndOf="@id/display_icon"
+            app:layout_constraintStart_toEndOf="@id/love_ic"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
-            android:text="3 comment"
+            android:text="100 comment"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
@@ -199,7 +210,7 @@
             android:adjustViewBounds="true"
             android:layout_marginLeft="40dp"
             android:scaleType="fitCenter"
-            android:src="@drawable/like_button"
+            android:src="@drawable/fb_like_button"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintStart_toEndOf="@id/comment_button"

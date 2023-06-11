@@ -6,53 +6,11 @@
     android:layout_height="match_parent"
     tools:context="edu.hanu.app.Instagram.InstagramActivity">
 
-    <RelativeLayout
-        android:id="@+id/instagram_header"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <ImageView
-            android:id="@+id/instagram_name"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:src="@drawable/instagram_logo"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="14dp"/>
-
-        <ImageView
-            android:id="@+id/instagram_arrow_icon"
-            android:layout_width="10dp"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ins_arrow_down"
-            android:layout_marginTop="14dp"
-            android:layout_toRightOf="@id/instagram_name"/>
-
-        <ImageView
-            android:id="@+id/instagram_heart_icon"
-            android:layout_width="30dp"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ins_heart_icon"
-            android:layout_marginLeft="190dp"
-            android:layout_marginTop="18dp"
-            android:layout_toRightOf="@id/instagram_name"/>
-
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/ins_messenger_icon"
-            android:layout_marginTop="19dp"
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@id/instagram_heart_icon" />
-    </RelativeLayout>
-
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/instagram_view_pager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/instagram_header"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/ins_bottom_nav"/>
@@ -61,9 +19,10 @@
         android:id="@+id/ins_bottom_nav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:menu="@menu/menu_bottom_navigation"
+        app:menu="@menu/menu_bottom_nav_ins"
         app:itemIconSize="30dp"
         app:itemIconTint="@color/black"
+        app:labelVisibilityMode="unlabeled"
         app:layout_constraintTop_toBottomOf="@id/instagram_view_pager"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
