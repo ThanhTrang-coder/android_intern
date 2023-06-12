@@ -8,7 +8,7 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 import java.util.ArrayList;
 
 import edu.hanu.app.Pinterest.fragments.DefaultFragment;
-import edu.hanu.app.Instagram.fragments.SearchFragment;
+import edu.hanu.app.Tiktok.fragments.HomeFragment;
 
 public class TikTokAdapterViewPager extends FragmentStatePagerAdapter {
     ArrayList<Fragment> arrayList;
@@ -22,7 +22,7 @@ public class TikTokAdapterViewPager extends FragmentStatePagerAdapter {
     @Override
     public Fragment getItem(int position) {
         switch (position) {
-            case 0: return new DefaultFragment();
+            case 0: return new HomeFragment();
             case 1: return new DefaultFragment();
             case 2: return new DefaultFragment();
             case 3: return new DefaultFragment();

@@ -58,13 +58,13 @@ public class HomeFragment extends Fragment {
         photos.add(new Photo(R.drawable.image3));
         photos.add(new Photo(R.drawable.image8));
 
-        String videoUrl = "https://www.youtube.com/watch?v=wjcukywhO50&t=318s";
+        String videoUrl = "https://firebasestorage.googleapis.com/v0/b/my-app-cb08d.appspot.com/o/video2.mp4?alt=media&token=2aa5d754-fe86-4e8a-a07a-cfa79941f66c";
 
         list.add(new FbPost(FbPostAdapter.TYPE_IMAGE, "Đậu hũ thối", R.drawable.dau_hu_thoi, R.drawable.image2, "1/6 dành cho các 'em bé', tuổi thực tế hay tuổi tâm hồn đều xứng đáng có quàaa"));
         list.add(new FbPost(FbPostAdapter.TYPE_MULTI_IMAGE, "Lang Thang Hà Nội", R.drawable.langthanghn_avatar, photos, "multiple photo"));
         list.add(new FbPost(FbPostAdapter.TYPE_VIDEO, "SUB Factory", R.drawable.sub_factory, videoUrl, "Video!!!"));
         list.add(new FbPost(FbPostAdapter.TYPE_IMAGE, "Halo Hà Nội", R.drawable.halo_avatar, R.drawable.halo_post, "Toàn nói sự thật không đó \uD83E\uDEE3"));
-        list.add(new FbPost(FbPostAdapter.TYPE_IMAGE, "SUB Factory", R.drawable.sub_factory, R.drawable.sub_factory_post, "slow progress is not a failure, it's better than nothing."));
+        list.add(new FbPost(FbPostAdapter.TYPE_VIDEO, "SUB Factory", R.drawable.sub_factory, videoUrl, "Video!!!"));
         list.add(new FbPost(FbPostAdapter.TYPE_IMAGE, "Chuyện của Hà Nội", R.drawable.chuyen_cua_hn_avatar, R.drawable.chuyen_cua_hn_post, "Cháu phát âm hợp lý quá, tôi không cãi được \uD83D\uDE02"));
 
         return list;

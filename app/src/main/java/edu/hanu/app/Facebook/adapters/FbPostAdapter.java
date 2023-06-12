@@ -1,12 +1,15 @@
 package edu.hanu.app.Facebook.adapters;
 
 import android.content.Context;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.MediaController;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.VideoView;
 
@@ -17,6 +20,7 @@ import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import edu.hanu.app.Facebook.models.FbPost;
+import edu.hanu.app.Tiktok.models.VideoObject;
 import edu.hanu.mydesign.R;
 
 public class FbPostAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
@@ -58,31 +62,13 @@ public class FbPostAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         FbPost post_item = list.get(position);
         if(TYPE_IMAGE == post_item.getType()) {
             ImageViewHolder imageViewHolder = (ImageViewHolder) holder;
-            imageViewHolder.user_avatar_of_post.setImageResource(post_item.getUser_avatar_of_post());
-            imageViewHolder.user_name_of_post.setText(post_item.getUser_name_of_post());
-            imageViewHolder.post_content.setText(post_item.getPost_content());
-            imageViewHolder.user_image_of_post.setImageResource(post_item.getUser_image_of_post());
+            imageViewHolder.setImage(post_item);
         } else if (TYPE_MULTI_IMAGE == post_item.getType()) {
             MultipleImageViewHolder multipleImageViewHolder = (MultipleImageViewHolder) holder;
-            multipleImageViewHolder.user_avatar_of_post.setImageResource(post_item.getUser_avatar_of_post());
-            multipleImageViewHolder.user_name_of_post.setText(post_item.getUser_name_of_post());
-            multipleImageViewHolder.post_content.setText(post_item.getPost_content());
-            multipleImageViewHolder.image_1.setImageResource(post_item.getPhotos().get(0).getResourceId());
-            multipleImageViewHolder.image_2.setImageResource(post_item.getPhotos().get(1).getResourceId());
-            multipleImageViewHolder.image_3.setImageResource(post_item.getPhotos().get(2).getResourceId());
-            multipleImageViewHolder.image_4.setImageResource(post_item.getPhotos().get(3).getResourceId());
+            multipleImageViewHolder.setMultipleImage(post_item);
         } else if (TYPE_VIDEO == post_item.getType()) {
             VideoViewHolder videoViewHolder = (VideoViewHolder) holder;
-            videoViewHolder.user_avatar_of_post.setImageResource(post_item.getUser_avatar_of_post());
-            videoViewHolder.user_name_of_post.setText(post_item.getUser_name_of_post());
-            videoViewHolder.post_content.setText(post_item.getPost_content());
-
-            MediaController mediaController = new MediaController(context);
-            mediaController.setAnchorView(videoViewHolder.videoView);
-            videoViewHolder.videoView.setMediaController(mediaController);
-            Uri uri = Uri.parse(post_item.getVideoUrl());
-            videoViewHolder.videoView.setVideoURI(uri);
-            videoViewHolder.videoView.start();
+            videoViewHolder.setVideo(post_item);
         }
     }
 
@@ -97,6 +83,7 @@ public class FbPostAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         private TextView user_name_of_post, post_content;
         private ImageView user_image_of_post;
 
+
         public ImageViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -104,6 +91,13 @@ public class FbPostAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             user_name_of_post = itemView.findViewById(R.id.user_name_of_post);
             user_image_of_post = itemView.findViewById(R.id.user_image_of_post);
             post_content = itemView.findViewById(R.id.post_content);
+        }
+
+        public void setImage(FbPost post_item) {
+            user_avatar_of_post.setImageResource(post_item.getUser_avatar_of_post());
+            user_name_of_post.setText(post_item.getUser_name_of_post());
+            post_content.setText(post_item.getPost_content());
+            user_image_of_post.setImageResource(post_item.getUser_image_of_post());
         }
     }
 
@@ -123,12 +117,23 @@ public class FbPostAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             image_3 = itemView.findViewById(R.id.image_3);
             image_4 = itemView.findViewById(R.id.image_4);
         }
+
+        public void setMultipleImage (FbPost post_item) {
+            user_avatar_of_post.setImageResource(post_item.getUser_avatar_of_post());
+            user_name_of_post.setText(post_item.getUser_name_of_post());
+            post_content.setText(post_item.getPost_content());
+            image_1.setImageResource(post_item.getPhotos().get(0).getResourceId());
+            image_2.setImageResource(post_item.getPhotos().get(1).getResourceId());
+            image_3.setImageResource(post_item.getPhotos().get(2).getResourceId());
+            image_4.setImageResource(post_item.getPhotos().get(3).getResourceId());
+        }
     }
 
     public class VideoViewHolder extends RecyclerView.ViewHolder {
         private CircleImageView user_avatar_of_post;
         private TextView user_name_of_post, post_content;
         private VideoView videoView;
+        private ProgressBar progressBar;
 
         public VideoViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -137,6 +142,35 @@ public class FbPostAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             user_name_of_post = itemView.findViewById(R.id.user_name_of_post);
             post_content = itemView.findViewById(R.id.post_content);
             videoView = itemView.findViewById(R.id.videoView);
+            progressBar = itemView.findViewById(R.id.videoProgressBar);
+        }
+
+        private void setVideo(FbPost post_item) {
+            user_avatar_of_post.setImageResource(post_item.getUser_avatar_of_post());
+            user_name_of_post.setText(post_item.getUser_name_of_post());
+            post_content.setText(post_item.getPost_content());
+            videoView.setVideoPath(post_item.getVideoUrl());
+
+            videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+                @Override
+                public void onPrepared(MediaPlayer mediaPlayer) {
+                    progressBar.setVisibility(View.GONE);
+                    mediaPlayer.start();
+                }
+            });
+
+            videoView.setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View view, MotionEvent motionEvent) {
+                    if(videoView.isPlaying()) {
+                        videoView.pause();
+                        return false;
+                    } else {
+                        videoView.start();
+                        return false;
+                    }
+                }
+            });
         }
     }
 }
