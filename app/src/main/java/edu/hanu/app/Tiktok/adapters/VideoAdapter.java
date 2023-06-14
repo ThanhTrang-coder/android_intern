@@ -45,8 +45,8 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
     }
 
     public class VideoViewHolder extends RecyclerView.ViewHolder {
-        VideoView videoView;
         TextView user_name, videoDesc, videoHastag, music_name;
+        VideoView videoView;
         ProgressBar progressBar;
 
         public VideoViewHolder(@NonNull View itemView) {

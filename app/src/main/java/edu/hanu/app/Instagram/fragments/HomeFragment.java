@@ -7,6 +7,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -45,8 +46,8 @@ public class HomeFragment extends Fragment {
 
     private void setUpStoryAdapter() {
         InsStoryAdapter insStoryAdapter = new InsStoryAdapter(getStoryList());
-        LinearLayoutManager verticalLayout = new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false);
-        rv_ins_story_list.setLayoutManager(verticalLayout);
+        LinearLayoutManager horizontalLayout = new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false);
+        rv_ins_story_list.setLayoutManager(horizontalLayout);
         rv_ins_story_list.setAdapter(insStoryAdapter);
     }
 
@@ -59,10 +60,10 @@ public class HomeFragment extends Fragment {
 
     private List<InsPost> getPostList() {
         List<InsPost> list = new ArrayList<>();
-        list.add(new InsPost(R.drawable.image, R.drawable.image8, "User 1", "03/06/2023", "Đây là nội dung bài post trên instagram.", "gitabigitabi", "Xin giá"));
-        list.add(new InsPost(R.drawable.image7, R.drawable.image4, "User 2", "01/06/2023", "Đây là nội dung bài post trên instagram.", "_tomtom211_", "Mình xin giá ạ"));
-        list.add(new InsPost(R.drawable.image5, R.drawable.image, "User 3", "29/05/2023", "Đây là nội dung bài post trên instagram.", "blalabla", "Xin giá"));
-        list.add(new InsPost(R.drawable.image3, R.drawable.image1, "User 4", "30/05/2023", "Đây là nội dung bài post trên instagram.", "gibugibu", "Xin giá"));
+        list.add(new InsPost(R.drawable.image9, R.drawable.image8, "User 1", "03/06/2023", "Đây là nội dung bài post trên instagram.", "gitabigitabi", "Comment 1"));
+        list.add(new InsPost(R.drawable.image7, R.drawable.image4, "User 2", "01/06/2023", "Đây là nội dung bài post trên instagram.", "_tomtom211_", "Comment 2"));
+        list.add(new InsPost(R.drawable.image5, R.drawable.image10, "User 3", "29/05/2023", "Đây là nội dung bài post trên instagram.", "blalabla", "Comment 3"));
+        list.add(new InsPost(R.drawable.image3, R.drawable.image1, "User 4", "30/05/2023", "Đây là nội dung bài post trên instagram.", "gibugibu", "Comment 4"));
 
         return list;
     }
@@ -72,7 +73,7 @@ public class HomeFragment extends Fragment {
         list.add(new InsStory(R.drawable.image8, "Tin của bạn", true));
         list.add(new InsStory(R.drawable.image2, "bbydannn", false));
         list.add(new InsStory(R.drawable.image5, "jordanvietnam", false));
-        list.add(new InsStory(R.drawable.image, "_mikezxc_", false));
+        list.add(new InsStory(R.drawable.image9, "_mikezxc_", false));
         list.add(new InsStory(R.drawable.image6, "tiramitsu", false));
         list.add(new InsStory(R.drawable.image4, "buhubuhu", false));
 

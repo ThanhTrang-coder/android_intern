@@ -102,9 +102,9 @@ public class FbPostAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     }
 
     public class MultipleImageViewHolder extends RecyclerView.ViewHolder {
-        private CircleImageView user_avatar_of_post;
-        private TextView user_name_of_post, post_content;
-        private ImageView image_1, image_2, image_3, image_4;
+        TextView user_name_of_post, post_content;
+        ImageView image_1, image_2, image_3, image_4;
+        CircleImageView user_avatar_of_post;
 
         public MultipleImageViewHolder(@NonNull View itemView) {
             super(itemView);

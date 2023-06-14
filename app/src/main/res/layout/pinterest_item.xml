@@ -95,7 +95,7 @@
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginLeft="5dp"
-            android:src="@drawable/like"
+            android:src="@drawable/fb_ic_like"
             app:layout_constraintEnd_toStartOf="@id/love_react_btn"
             app:layout_constraintBottom_toBottomOf="parent"/>
         <ImageView
@@ -103,7 +103,7 @@
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginLeft="5dp"
-            android:src="@drawable/love"
+            android:src="@drawable/fb_ic_love"
             app:layout_constraintStart_toEndOf="@id/like_react_btn"
             app:layout_constraintBottom_toBottomOf="parent"/>
 

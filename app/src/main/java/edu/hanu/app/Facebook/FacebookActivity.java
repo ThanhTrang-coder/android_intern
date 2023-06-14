@@ -15,7 +15,6 @@ import edu.hanu.app.Pinterest.fragments.DefaultFragment;
 import edu.hanu.mydesign.R;
 
 public class FacebookActivity extends AppCompatActivity {
-    int[] images = {R.drawable.image2, R.drawable.image, R.drawable.image5, R.drawable.image7};
     FbAdapterViewPager facebookAdapterViewPager;
     ViewPager postList;
     TabLayout tabLayout;

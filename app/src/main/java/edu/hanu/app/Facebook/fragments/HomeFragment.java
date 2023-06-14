@@ -73,12 +73,12 @@ public class HomeFragment extends Fragment {
     private List<FbStory> getNewsFeedList() {
         List<FbStory> list = new ArrayList<>();
         list.add(new FbStory(R.drawable.image7, true));
-        list.add(new FbStory(R.drawable.image, R.drawable.image2, "User 1", false));
+        list.add(new FbStory(R.drawable.image9, R.drawable.image2, "User 1", false));
         list.add(new FbStory(R.drawable.image1, R.drawable.image8, "User 2", false));
         list.add(new FbStory(R.drawable.image2, R.drawable.image7, "User 3", false));
         list.add(new FbStory(R.drawable.image3, R.drawable.image6, "User 4", false));
         list.add(new FbStory(R.drawable.image4, R.drawable.image5, "User 5", false));
-        list.add(new FbStory(R.drawable.image5, R.drawable.image, "User 6", false));
+        list.add(new FbStory(R.drawable.image5, R.drawable.image10, "User 6", false));
         list.add(new FbStory(R.drawable.image6, R.drawable.image1, "User 7", false));
         list.add(new FbStory(R.drawable.image7, R.drawable.image2, "User 8", false));
         list.add(new FbStory(R.drawable.image8, R.drawable.image4, "User 9", false));

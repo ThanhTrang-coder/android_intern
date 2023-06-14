@@ -45,8 +45,8 @@ public class CraftAdapter extends RecyclerView.Adapter<CraftAdapter.CraftHolder>
     }
 
     public class CraftHolder extends RecyclerView.ViewHolder {
-        private ImageView imageView;
-        private TextView textView;
+        TextView textView;
+        ImageView imageView;
 
         public CraftHolder(@NonNull View itemView) {
             super(itemView);

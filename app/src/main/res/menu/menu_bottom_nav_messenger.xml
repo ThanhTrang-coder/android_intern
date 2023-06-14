@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/bottom_nav_chat"
+        android:title="Đoạn chat"
+        android:icon="@drawable/mess_icon_chat" />
+
+    <item
+        android:id="@+id/bottom_nav_video_call"
+        android:title="Cuộc gọi"
+        android:icon="@drawable/mess_icon_video_call" />
+
+    <item
+        android:id="@+id/bottom_nav_phonebook"
+        android:title="Danh bạ"
+        android:icon="@drawable/mess_icon_people" />
+
+    <item
+        android:id="@+id/bottom_nav_newsfeed"
+        android:title="Tin"
+        android:icon="@drawable/mess_icon_newsfeed" />
+</menu>

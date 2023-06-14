@@ -70,7 +70,7 @@ public class ListPhotoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     }
 
     public class PhotoGridViewHolder extends RecyclerView.ViewHolder {
-        private ImageView image1, image2, image3;
+        ImageView image1, image2, image3;
 
         public PhotoGridViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -81,7 +81,7 @@ public class ListPhotoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     }
 
     public class PhotoLargeViewHolder extends RecyclerView.ViewHolder {
-        private ImageView image1, image2, image3, image4, image5;
+        ImageView image1, image2, image3, image4, image5;
 
         public PhotoLargeViewHolder(@NonNull View itemView) {
             super(itemView);

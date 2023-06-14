@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class PinterestAdapterViewPager extends FragmentPagerAdapter {
     ArrayList<Fragment> fragmentList = new ArrayList<>();

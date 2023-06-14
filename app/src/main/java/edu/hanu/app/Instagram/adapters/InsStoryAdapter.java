@@ -67,7 +67,7 @@ public class InsStoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
     public class AddUserStoryHolder extends RecyclerView.ViewHolder {
-        private CircleImageView ins_avatar;
+        CircleImageView ins_avatar;
 
         public AddUserStoryHolder(@NonNull View itemView) {
             super(itemView);
@@ -77,8 +77,8 @@ public class InsStoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
     public class DefaultStoryHolder extends RecyclerView.ViewHolder {
-        private CircleImageView ins_default_avatar;
-        private TextView ins_user_name;
+        TextView ins_user_name;
+        CircleImageView ins_default_avatar;
 
         public DefaultStoryHolder(@NonNull View itemView) {
             super(itemView);

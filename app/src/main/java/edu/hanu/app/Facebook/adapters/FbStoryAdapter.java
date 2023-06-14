@@ -79,9 +79,9 @@ public class FbStoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     }
 
     public class DefaultStoryHolder extends RecyclerView.ViewHolder {
-        private ImageView default_user_story;
-        private CircleImageView default_user_avatar;
-        private TextView default_user_name;
+        TextView default_user_name;
+        ImageView default_user_story;
+        CircleImageView default_user_avatar;
 
         public DefaultStoryHolder(@NonNull View itemView) {
             super(itemView);

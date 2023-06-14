@@ -41,11 +41,11 @@ public class CraftFragment extends Fragment{
 
     private ArrayList<Craft> getData() {
         ArrayList<Craft> list = new ArrayList<>();
-        list.add(new Craft(R.drawable.image, "Image 1"));
+        list.add(new Craft(R.drawable.image10, "Image 1"));
         list.add(new Craft(R.drawable.image4, "Image 2"));
         list.add(new Craft(R.drawable.image5, "Image 3"));
         list.add(new Craft(R.drawable.image2, "Image 4"));
-        list.add(new Craft(R.drawable.image8, "Image 5"));
+        list.add(new Craft(R.drawable.image9, "Image 5"));
         list.add(new Craft(R.drawable.image5, "Image 5"));
         list.add(new Craft(R.drawable.image6, "Image 6"));
         list.add(new Craft(R.drawable.image4, "Image 4"));

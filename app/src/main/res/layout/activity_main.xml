@@ -13,7 +13,17 @@
         android:src="@drawable/ic_facebook"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/imv_tiktok"
+        app:layout_constraintBottom_toTopOf="@id/imv_messenger"/>
+
+    <ImageView
+        android:id="@+id/imv_messenger"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_messenger"
+        app:layout_constraintTop_toBottomOf="@id/imv_facebook"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/imv_pinterest"
         app:layout_constraintBottom_toTopOf="@id/imv_instagram"/>
 
     <ImageView
@@ -21,18 +31,18 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:src="@drawable/ic_instagram"
-        app:layout_constraintTop_toBottomOf="@id/imv_facebook"
+        app:layout_constraintTop_toBottomOf="@id/imv_messenger"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/imv_tiktok"/>
+        app:layout_constraintEnd_toStartOf="@id/imv_weather"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
     <ImageView
         android:id="@+id/imv_tiktok"
-        android:layout_width="140dp"
-        android:layout_height="140dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:src="@drawable/ic_tiktok"
-        app:layout_constraintTop_toBottomOf="@id/imv_instagram"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imv_facebook"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/imv_pinterest"/>
 
@@ -42,7 +52,17 @@
         android:layout_height="100dp"
         android:src="@drawable/ic_pinterest"
         app:layout_constraintTop_toBottomOf="@id/imv_tiktok"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imv_messenger"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/imv_weather"/>
+
+    <ImageView
+        android:id="@+id/imv_weather"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_weather"
+        app:layout_constraintTop_toBottomOf="@id/imv_pinterest"
+        app:layout_constraintStart_toEndOf="@id/imv_instagram"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
