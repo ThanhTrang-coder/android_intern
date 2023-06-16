@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         imv_weather.setOnClickListener(view -> {
-            Intent intent = new Intent(MainActivity.this, WeatherActivity.class);
+            Intent intent = new Intent(MainActivity.this, TestActivity.class);
             startActivity(intent);
         });
     }

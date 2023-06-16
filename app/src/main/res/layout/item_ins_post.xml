@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="5dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <FrameLayout
+        android:id="@+id/post_image_container"
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/ins_post_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/image7"
+            android:adjustViewBounds="true"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ins_user_avatar_post"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/image8"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="15dp"/>
+
+        <TextView
+            android:id="@+id/ins_user_name_post"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="cam.bags"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="70dp"/>
+        <TextView
+            android:id="@+id/ins_post_music"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alan Avry - Shine On Me (Instrumental)"
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:layout_marginTop="38dp"
+            android:layout_marginLeft="70dp"/>
+
+        <ImageView
+            android:id="@+id/ic_more_horiz"
+            android:layout_width="40dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/ins_ic_more_horiz"
+            android:layout_marginTop="23dp"
+            android:layout_marginLeft="360dp" />
+
+        <ImageView
+            android:id="@+id/ins_post_ic_reel"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ins_ic_post_reel"
+            android:adjustViewBounds="true"
+            android:layout_marginTop="510dp"/>
+    </FrameLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/post_comment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        app:layout_constraintTop_toBottomOf="@id/post_image_container"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ins_ic_heart"/>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="35dp"
+                android:src="@drawable/ins_ic_post_chat"/>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="75dp"
+                android:src="@drawable/ins_ic_send"/>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="350dp"
+                android:src="@drawable/ins_ic_save"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/like_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="376 lượt thích"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginTop="35dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/content_post"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="content post"
+            android:textColor="@color/black"
+            android:layout_marginTop="55dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Xem tất cả 86 bình luận"
+            android:textColor="@color/gray_700"
+            android:layout_marginTop="75dp"
+            android:ellipsize="end"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/commenter_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="gitabigitabi"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginTop="95dp"
+            android:ellipsize="end"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Xin giá"
+            android:textColor="@color/gray_700"
+            android:layout_marginTop="95dp"
+            android:layout_marginLeft="5dp"
+            android:ellipsize="end"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/commenter_name"/>
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="95dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/ins_ic_heart"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

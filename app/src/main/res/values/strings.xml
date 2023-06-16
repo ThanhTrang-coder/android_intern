@@ -7,6 +7,9 @@
     <string name="nav_marketplace">Marketplace</string>
     <string name="nav_waiting_messenger">Tin nhắn đang chờ</string>
     <string name="nav_archives">Kho lưu trữ</string>
+    <string name="nav_video_call">Cuộc gọi</string>
+    <string name="nav_phonebook">Danh bạ</string>
+    <string name="nav_newsfeed">Tin</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

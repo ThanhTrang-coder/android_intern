@@ -38,13 +38,13 @@ public class InsStoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         if(TYPE_ADD_STORY == viewType) {
-            View view = inflater.inflate(R.layout.ins_add_story_item, parent, false);
+            View view = inflater.inflate(R.layout.item_ins_add_story, parent, false);
             return new AddUserStoryHolder(view);
         } else if (TYPE_DEFAULT_STORY == viewType) {
-            View view = inflater.inflate(R.layout.ins_story_item, parent, false);
+            View view = inflater.inflate(R.layout.item_ins_story, parent, false);
             return new DefaultStoryHolder(view);
         }
-        return new DefaultStoryHolder(inflater.inflate(R.layout.ins_story_item, parent, false));
+        return new DefaultStoryHolder(inflater.inflate(R.layout.item_ins_story, parent, false));
     }
 
     @Override

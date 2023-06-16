@@ -16,6 +16,12 @@
         android:theme="@style/Theme.MyDesign"
         tools:targetApi="31">
         <activity
+            android:name="edu.hanu.app.test.SecondActivity"
+            android:exported="false" />
+        <activity
+            android:name="edu.hanu.app.Messenger.ConversationDetailActivity"
+            android:exported="false" />
+        <activity
             android:name="edu.hanu.app.Weather.WeatherActivity"
             android:exported="false" />
         <activity

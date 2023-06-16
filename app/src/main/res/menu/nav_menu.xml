@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-    <item android:id="@+id/nav_chat"
-        android:icon="@drawable/mess_icon_chat"
-        android:title="Đoạn chat" />
+        <group android:checkableBehavior="single">
+                <item android:id="@+id/nav_chat"
+                    android:title="@string/nav_chat"
+                    android:icon="@drawable/mess_icon_chat" />
 
-    <item android:id="@+id/nav_marketplace"
-        android:icon="@drawable/mess_icon_marketplace"
-        android:title="Marketplace" />
+                <item android:id="@+id/nav_marketplace"
+                    android:title="@string/nav_marketplace"
+                    android:icon="@drawable/mess_icon_marketplace" />
 
-    <item android:id="@+id/nav_messenger"
-        android:icon="@drawable/pinterest_chat_icon"
-        android:title="Tin nhắn đang chờ" />
+                <item android:id="@+id/nav_waiting_messenge"
+                    android:title="@string/nav_waiting_messenger"
+                    android:icon="@drawable/mess_icon_messenge" />
 
-    <item android:id="@+id/nav_archives"
-        android:icon="@drawable/mess_icon_archives"
-        android:title="Kho lưu trữ" />
+                <item android:id="@+id/nav_archives"
+                    android:title="@string/nav_archives"
+                    android:icon="@drawable/mess_icon_archives" />
+        </group>
 </menu>

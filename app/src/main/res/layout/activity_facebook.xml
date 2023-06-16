@@ -76,8 +76,6 @@
                     app:fabSize="mini"
                     app:maxImageSize="28dp" />
             </RelativeLayout>
-
-
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
         <com.google.android.material.tabs.TabLayout

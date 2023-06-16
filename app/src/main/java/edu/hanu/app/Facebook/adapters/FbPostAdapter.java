@@ -2,13 +2,11 @@ package edu.hanu.app.Facebook.adapters;
 
 import android.content.Context;
 import android.media.MediaPlayer;
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.MediaController;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.VideoView;
@@ -20,7 +18,6 @@ import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import edu.hanu.app.Facebook.models.FbPost;
-import edu.hanu.app.Tiktok.models.VideoObject;
 import edu.hanu.mydesign.R;
 
 public class FbPostAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
@@ -45,13 +42,13 @@ public class FbPostAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         if(TYPE_IMAGE == viewType) {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fb_post_one_image_item, parent, false);
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_fb_post_one_image, parent, false);
             return new ImageViewHolder(view);
         } else if (TYPE_MULTI_IMAGE == viewType) {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fb_post_multiple_image_item, parent, false);
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_fb_post_multiple_image, parent, false);
             return new MultipleImageViewHolder(view);
         } else if (TYPE_VIDEO == viewType) {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fb_post_video_item, parent, false);
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_fb_post_video, parent, false);
             return new VideoViewHolder(view);
         }
         return null;
