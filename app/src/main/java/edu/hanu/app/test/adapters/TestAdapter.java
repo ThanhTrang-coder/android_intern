@@ -24,7 +24,7 @@ public class TestAdapter extends RecyclerView.Adapter<TestAdapter.TestViewHolder
     @NonNull
     @Override
     public TestViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_chat_horizontal, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_story, parent, false);
         return new TestViewHolder(view);
     }
 

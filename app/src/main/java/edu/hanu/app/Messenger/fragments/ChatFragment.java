@@ -6,26 +6,21 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import edu.hanu.app.Messenger.ConversationDetailActivity;
 import edu.hanu.app.Messenger.ConversationListener;
-import edu.hanu.app.Messenger.adapters.Adapter;
-import edu.hanu.app.Messenger.adapters.Adapter2;
+import edu.hanu.app.Messenger.adapters.StoryAdapter;
+import edu.hanu.app.Messenger.adapters.ConversationAdapter;
 import edu.hanu.app.Messenger.models.Model;
 import edu.hanu.app.Messenger.models.Model2;
 import edu.hanu.mydesign.R;
@@ -43,17 +38,17 @@ public class ChatFragment extends Fragment implements ConversationListener {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        RecyclerView rvHorizontal = view.findViewById(R.id.rvHorizontal);
+        RecyclerView rvStory = view.findViewById(R.id.rvStory);
         LinearLayoutManager horizontalLayout = new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false);
-        rvHorizontal.setLayoutManager(horizontalLayout);
-        Adapter adapter = new Adapter(getListChatHorizontal(), this);
-        rvHorizontal.setAdapter(adapter);
+        rvStory.setLayoutManager(horizontalLayout);
+        StoryAdapter adapter = new StoryAdapter(getListChatHorizontal(), this);
+        rvStory.setAdapter(adapter);
 
-        RecyclerView rvVertical = view.findViewById(R.id.rvVertical);
+        RecyclerView rvConversation = view.findViewById(R.id.rvConversation);
         LinearLayoutManager manager1 = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
-        rvVertical.setLayoutManager(manager1);
-        Adapter2 adapter2 = new Adapter2(getListChatVertical());
-        rvVertical.setAdapter(adapter2);
+        rvConversation.setLayoutManager(manager1);
+        ConversationAdapter adapter2 = new ConversationAdapter(getListChatVertical(), this);
+        rvConversation.setAdapter(adapter2);
     }
 
     private List<Model> getListChatHorizontal() {

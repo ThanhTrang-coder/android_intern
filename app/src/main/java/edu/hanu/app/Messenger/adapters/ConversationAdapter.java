@@ -12,28 +12,28 @@ import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import edu.hanu.app.Messenger.ConversationListener;
-import edu.hanu.app.Messenger.models.Model;
+import edu.hanu.app.Messenger.models.Model2;
 import edu.hanu.mydesign.R;
 
-public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
-    List<Model> list;
+public class ConversationAdapter extends RecyclerView.Adapter<ConversationAdapter.ViewHolder2> {
+    List<Model2> list;
     ConversationListener listener;
 
-    public Adapter (List<Model> list, ConversationListener listener) {
+    public ConversationAdapter(List<Model2> list, ConversationListener listener) {
         this.list = list;
         this.listener = listener;
     }
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_chat_horizontal, parent, false);
-        return new ViewHolder(view);
+    public ViewHolder2 onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_conversation, parent, false);
+        return new ViewHolder2(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Model item = list.get(position);
+    public void onBindViewHolder(@NonNull ViewHolder2 holder, int position) {
+        Model2 item = list.get(position);
         holder.setData(item);
     }
 
@@ -42,15 +42,16 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         return list.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        CircleImageView avatar;
-        TextView user_name;
+    public class ViewHolder2 extends RecyclerView.ViewHolder {
+        CircleImageView user_avatar;
+        TextView user_name, content;
 
-        public ViewHolder(@NonNull View itemView) {
+        public ViewHolder2(@NonNull View itemView) {
             super(itemView);
 
-            avatar = itemView.findViewById(R.id.user_avatar);
+            user_avatar = itemView.findViewById(R.id.user_avatar);
             user_name = itemView.findViewById(R.id.user_name);
+            content = itemView.findViewById(R.id.content);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -63,9 +64,10 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
             });
         }
 
-        private void setData(Model item) {
-            avatar.setImageResource(item.getImageUrl());
+        private void setData(Model2 item) {
+            user_avatar.setImageResource(item.getImageUrl());
             user_name.setText(item.getUser_name());
+            content.setText(item.getContent());
         }
     }
 }
