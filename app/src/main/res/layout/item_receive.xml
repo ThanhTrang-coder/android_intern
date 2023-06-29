@@ -18,7 +18,7 @@
         android:paddingHorizontal="12dp"
         android:paddingVertical="9dp"
         android:gravity="end"
-        android:background="@drawable/search_view_background_messenger"
+        android:background="@drawable/background_search_view_messenger"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 </LinearLayout>
