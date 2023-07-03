@@ -43,7 +43,7 @@
         android:id="@+id/tvTempMaxMin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="34/27"
+        android:text="34⁰ / 27⁰"
         android:textSize="18sp"
         android:textStyle="bold"
         android:textColor="@color/black"

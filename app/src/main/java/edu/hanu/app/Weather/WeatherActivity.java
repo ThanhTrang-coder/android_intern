@@ -37,10 +37,11 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class WeatherActivity extends AppCompatActivity {
-    TextView tvCityName, tvCurrentTime, tvCurrentTemp, tvDescription, tvTempMaxMin, tvFeelsLike, tvHumidity, tvSunrise, tvSunset, tvWind;
+    TextView tvCityName, tvCurrentTime, tvCurrentTemp, tvDescription, tvTempMaxMin, tvFeelsLike,
+            tvHumidity, tvSunrise, tvSunset, tvWind;
     EditText edtSearchView;
     FloatingActionButton fab_search;
-    String url = "api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}";
+    String url = "https://api.openweathermap.org/data/2.5/weather?q=hanoi&appid=d0dd5f297c71810e52a03f1542c23fed";
     String apiKey = "d0dd5f297c71810e52a03f1542c23fed";
 
     RecyclerView rvDisplayTempByHour, rvDisplayTempByDay;
@@ -58,7 +59,7 @@ public class WeatherActivity extends AppCompatActivity {
 
         initView();
 
-        SimpleDateFormat format = new SimpleDateFormat("dd MMMM yyyy", Locale.ENGLISH);
+        SimpleDateFormat format = new SimpleDateFormat("dd MMMM yyyy hh:mm", Locale.ENGLISH);
         String currentDate = format.format(new Date());
         tvCurrentTime.setText(currentDate);
 
